@@ -1,4 +1,4 @@
-package es.discoduroderoeroer.pedida_datos;
+package es.discoduroderoer.pedida_datos;
 
 import es.discoduroderoer.numeros.*;
 import java.util.InputMismatchException;
