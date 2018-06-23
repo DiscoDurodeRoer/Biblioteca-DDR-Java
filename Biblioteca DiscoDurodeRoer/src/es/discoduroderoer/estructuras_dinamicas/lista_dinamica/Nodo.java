@@ -1,4 +1,4 @@
-package ejercicio_ed_4_discoduroderoer;
+package es.discoduroderoer.estructuras_dinamicas.lista_dinamica;
 
 /**
  * Clase Nodo
