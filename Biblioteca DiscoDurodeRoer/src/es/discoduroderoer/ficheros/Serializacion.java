@@ -6,7 +6,6 @@
 
 package es.discoduroderoer.ficheros;
 
-import es.discoduroderoer.clases.ficheros.MiObjectOutputStream;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;

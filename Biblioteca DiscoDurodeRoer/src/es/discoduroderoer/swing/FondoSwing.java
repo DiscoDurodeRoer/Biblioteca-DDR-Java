@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.discoduroderoer.clases.swing;
+package es.discoduroderoer.swing;
 
 import java.awt.Component;
 import java.awt.Graphics;
