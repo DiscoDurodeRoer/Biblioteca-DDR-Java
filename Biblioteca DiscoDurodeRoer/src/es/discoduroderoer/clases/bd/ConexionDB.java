@@ -442,7 +442,7 @@ public class ConexionDB {
         try (Statement sentenciaAux = conexion.createStatement();
                 ResultSet aux = sentenciaAux.executeQuery(consulta);) {
 
-            return aux.getInt(0);
+            return aux.getInt(1);
 
         } catch (SQLException ex) {
             Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
