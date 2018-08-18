@@ -22,7 +22,7 @@ public class Aleatorios {
      */
     public static int generaNumeroAleatorio(int minimo, int maximo) {
 
-        int num = (int) Math.floor(Math.random() * (minimo - (maximo + 1)) + (maximo + 1));
+        int num = (int) (Math.random() * (minimo - (maximo + 1)) + (maximo + 1));
         return num;
     }
 
@@ -162,7 +162,7 @@ public class Aleatorios {
         } else {
             String password = "";
             for (int i = 0; i < longitud; i++) {
-                int eleccion = (int) Math.floor(Math.random() * 4);
+                int eleccion = (int) (Math.random() * 4);
                 switch (eleccion) {
                     case 0:
                         password += Integer.toString(generaNumeroAleatorio(0, 9));

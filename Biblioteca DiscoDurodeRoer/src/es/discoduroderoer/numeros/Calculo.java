@@ -24,6 +24,95 @@ public class Calculo {
     }
 
     /**
+     * Devuelve el factorial de un número de forma recursiva
+     *
+     * @param num
+     * @return
+     */
+    public static int factorialRec(int num) {
+
+        int res;
+
+        if (num == 1) {
+            //Se termina la recursión
+            return 1;
+        } else {
+            //Se llama asi misma la funcion, con el valor del numero menos 1
+            res = num * factorialRec(num - 1);
+        }
+
+        //Devolvemos el valor
+        return res;
+
+    }
+
+    /**
+     * Devuelve la suma de un numero a 1
+     *
+     * @param numero
+     * @return
+     */
+    public static int sumaRec(int numero) {
+
+        int res;
+
+        if (numero == 1) {
+            //Se termina la recursion
+            return 1;
+        } else {
+            //Se llama a si misma la función con el parametro numero menos 1
+            res = numero + sumaRec(numero - 1);
+        }
+
+        //Devuelve el resultado
+        return res;
+    }
+
+    /**
+     * Devuelve la suma los pares desde el numero pasado a 1
+     *
+     * @param numero
+     * @return
+     */
+    public static int sumaParesRec(int numero) {
+
+        int res;
+
+        if (numero <= 0) {
+            //Se termina la recursion
+            return 0;
+        } else {
+            //Se llama a si misma la función con el parametro numero menos 1
+
+            if (numero % 2 == 0) {
+                res = numero + sumaParesRec(numero - 2);
+            } else {
+                res = sumaParesRec(numero - 1);
+            }
+
+        }
+
+        //Devuelve el resultado
+        return res;
+    }
+
+    /**
+     * Suma los digitos de un numero
+     *
+     * @param numero
+     * @return
+     */
+    public static int sumaDigitosRec(int numero) {
+
+        if (numero < 10) { //caso base
+            return numero; //devuelvo el numero
+        } else {
+            return (numero % 10) + sumaDigitosRec(numero / 10); //Cojo el digito y llamo a la funcion
+        }
+
+    }
+
+    /**
      * Resuelve una ecuación de 2º grado
      *
      * @param a Valor de A
@@ -73,6 +162,24 @@ public class Calculo {
         } else {
             return potencia >= 0;
 
+        }
+
+    }
+
+    /**
+     * Devuelve la potencia de un numero recursivamente
+     *
+     * @param base
+     * @param exponente
+     * @return
+     */
+    public static double potenciaRec(int base, int exponente) {
+
+        if (exponente == 0) { //caso base
+            return 1; //10^0 = 1
+
+        } else {  //Exponente positivo
+            return base * potenciaRec(base, exponente - 1);
         }
 
     }
