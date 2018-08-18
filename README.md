@@ -7,7 +7,7 @@ Javadoc del proyecto. https://www.discoduroderoer.es/doc-biblioteca-ddr/
 Se dividen en varias secciones:
 
 ## Arrays 
----
+
 
 Su intención es hacer todo aquello que este relacionado con los arrays, ya sea ordenar, mostrar, rellenar, etc.
 
@@ -27,13 +27,13 @@ Se subdivide en varias clases:
 
 
 ## Multi idioma
----
+
 
 ## Expresiones regulares 
----
+
 
 ## Fechas
----
+
 
 ### Anios
 
@@ -49,7 +49,7 @@ Se subdivide en varias clases:
 
 
 ## Ficheros 
----
+
 
 ### Binarios
 
@@ -64,7 +64,7 @@ Se subdivide en varias clases:
 ### Texto
 
 ## Matrices
----
+
 
 ### EstadoMatriz
 
@@ -79,7 +79,7 @@ Se subdivide en varias clases:
 ### Rellenar
 
 ##  Números
----
+
 
 ### Aleatorios
 
@@ -92,12 +92,12 @@ Se subdivide en varias clases:
 ### Validacion
 
 ## Palabras
----
+
 
 ### Palabras
 
 ## Swing
----
+
 
 ### FondoSwing
 
@@ -112,4 +112,4 @@ Se subdivide en varias clases:
 ### Validacion
 
 ## XML 
----
+
