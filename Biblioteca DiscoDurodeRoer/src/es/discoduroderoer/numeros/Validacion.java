@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Fernando
  */
-public class ValidacionNumeros {
+public class Validacion {
    
     /**
      * Valida si la cadena introducida es un numero, hasta que no sea correcto no se deja de preguntar

@@ -71,9 +71,9 @@ public class Palabras {
     /**
      * Invierte una palabra
      *
-     * @param palabra
-     * @param longitud
-     * @return
+     * @param palabra Palabra a invertir
+     * @param longitud Longitud de la palabra
+     * @return palabra invertida
      */
     public static String invertirPalabraRec(String palabra, int longitud) {
 
@@ -88,9 +88,9 @@ public class Palabras {
     /**
      * Contar el numero de caracteres recursivamente
      *
-     * @param cadena
-     * @param indice
-     * @return
+     * @param cadena Cadena a contar
+     * @param indice Indice donde empezamos
+     * @return Numero de caracteres
      */
     public static int cuentaCaracteresRec(String cadena, int indice) {
         try {
@@ -104,8 +104,8 @@ public class Palabras {
     /**
      * Mostrar una cadena recursivamente
      *
-     * @param cadena
-     * @param indice
+     * @param cadena Cadena a mostrar
+     * @param indice Indice donde empezamos
      */
     public static void mostrarCadenaRec(String cadena, int indice) {
         try {

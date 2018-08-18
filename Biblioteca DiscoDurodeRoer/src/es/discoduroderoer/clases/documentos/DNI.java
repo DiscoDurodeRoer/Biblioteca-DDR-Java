@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Fernando
+ * @author DiscoDurodeRoer
  */
 public class DNI extends Documento{
     

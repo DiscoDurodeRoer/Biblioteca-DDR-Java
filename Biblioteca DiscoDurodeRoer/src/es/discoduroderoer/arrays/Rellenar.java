@@ -6,12 +6,12 @@
 package es.discoduroderoer.arrays;
 
 import es.discoduroderoer.numeros.Aleatorios;
-import es.discoduroderoer.numeros.ValidacionNumeros;
+import es.discoduroderoer.numeros.Validacion;
 
 /**
  * @author Discoduroderoer
  */
-public class RellenarArray {
+public class Rellenar {
 
     /**
      * Rellena un array de enteros, validando cada numero
@@ -21,7 +21,7 @@ public class RellenarArray {
     public static void rellenaArray(int array[]) {
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = ValidacionNumeros.validarNumero();
+            array[i] = Validacion.validarNumero();
         }
     }
 

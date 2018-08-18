@@ -8,7 +8,7 @@ package es.discoduroderoer.arrays;
 /**
  * @author Discoduroderoer
  */
-public class MostrarArray {
+public class Mostrar {
 
     /**
      * Muestra por consola un array de enteros (int)
@@ -102,8 +102,8 @@ public class MostrarArray {
     /**
      * Mostrar un array de forma recursiva
      *
-     * @param array
-     * @param indice
+     * @param array Array a mostrar
+     * @param indice Indice donde me encuentro actualmente
      */
     public static void mostrarArrayRecursivo(int[] array, int indice) {
 

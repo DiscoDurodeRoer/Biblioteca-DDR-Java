@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Fernando
+ * @author DiscoDurodeRoer
  */
 public class Rellenar {
     

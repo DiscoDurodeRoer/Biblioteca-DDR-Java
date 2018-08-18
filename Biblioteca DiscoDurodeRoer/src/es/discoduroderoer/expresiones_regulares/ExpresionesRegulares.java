@@ -246,10 +246,10 @@ public class ExpresionesRegulares {
     }
 
     /**
-     * Valida si una cadena es una matricula europea (<2000)
+     * Valida si una cadena es una matricula europea (&#60;2000)
      *
      * @param matricula String que contiene el valor a validar
-     * @return True = es una matricula europea (<2000)
+     * @return True = es una matricula europea (&#60;2000)
      */
     public static boolean validarMatriculaEuropea_Exp(String matricula) {
 

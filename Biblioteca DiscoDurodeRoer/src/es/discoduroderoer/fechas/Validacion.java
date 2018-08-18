@@ -12,7 +12,7 @@ import static es.discoduroderoer.fechas.Dias.numeroDeDiasMes;
 /**
  * @author DiscoDurodeRoer
  */
-public class ValicacionesFechas {
+public class Validacion {
     
     /**
      * Valida si la fecha es valida

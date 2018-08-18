@@ -8,7 +8,7 @@ package es.discoduroderoer.clases.documentos;
 
 /**
  *
- * @author fernandos
+ * @author DiscoDurodeRoer
  */
 public class Documento {
     

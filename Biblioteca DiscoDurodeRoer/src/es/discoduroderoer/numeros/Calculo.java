@@ -26,8 +26,8 @@ public class Calculo {
     /**
      * Devuelve el factorial de un número de forma recursiva
      *
-     * @param num
-     * @return
+     * @param num Numero a calcular
+     * @return Factorial del numero indicado
      */
     public static int factorialRec(int num) {
 
@@ -49,8 +49,8 @@ public class Calculo {
     /**
      * Devuelve la suma de un numero a 1
      *
-     * @param numero
-     * @return
+     * @param numero Numero donde empieza la suma
+     * @return Suma de 1 a ese numero
      */
     public static int sumaRec(int numero) {
 
@@ -71,8 +71,8 @@ public class Calculo {
     /**
      * Devuelve la suma los pares desde el numero pasado a 1
      *
-     * @param numero
-     * @return
+     * @param numero Numero donde comienza
+     * @return La suma del numero que comienza al 1, solo pares
      */
     public static int sumaParesRec(int numero) {
 
@@ -99,8 +99,8 @@ public class Calculo {
     /**
      * Suma los digitos de un numero
      *
-     * @param numero
-     * @return
+     * @param numero Suma los digitos
+     * @return Suma de los digitos
      */
     public static int sumaDigitosRec(int numero) {
 
@@ -168,10 +168,10 @@ public class Calculo {
 
     /**
      * Devuelve la potencia de un numero recursivamente
-     *
-     * @param base
-     * @param exponente
-     * @return
+     * 
+     * @param base Base del numero
+     * @param exponente Exponente a elevar
+     * @return Base elevado al exponente
      */
     public static double potenciaRec(int base, int exponente) {
 

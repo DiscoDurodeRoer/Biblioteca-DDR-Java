@@ -198,17 +198,17 @@ public class Array {
     /**
      * Invierte un array de forma recursiva
      *
-     * @param a1
-     * @param inicio
-     * @param fin
+     * @param array Array a invertir
+     * @param inicio Donde empiezo
+     * @param fin Donde acabo
      */
-    public static void invertirArrayRecursivo(int[] a1, int inicio, int fin) {
+    public static void invertirArrayRecursivo(int[] array, int inicio, int fin) {
 
         if (inicio < fin) {
-            int aux = a1[inicio];
-            a1[inicio] = a1[fin];
-            a1[fin] = aux;
-            invertirArrayRecursivo(a1, inicio + 1, fin - 1);
+            int aux = array[inicio];
+            array[inicio] = array[fin];
+            array[fin] = aux;
+            invertirArrayRecursivo(array, inicio + 1, fin - 1);
         }
 
     }

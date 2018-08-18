@@ -9,7 +9,7 @@ package es.discoduroderoer.arrays;
 /**
  * @author Discoduroderoer
  */
-public class OperacionesArray {
+public class Operaciones {
     
     
     /**

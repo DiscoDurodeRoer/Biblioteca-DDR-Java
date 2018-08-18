@@ -15,9 +15,9 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Fernando
+ * @author DiscoDurodeRoer
  */
-public class ValidacionesFormularios {
+public class Validacion {
     
     
      /**
@@ -109,7 +109,7 @@ public class ValidacionesFormularios {
      * Comprueba si hay varios TextBox que esta vacios
      * En la 1º columna van los TextBox
      * En la 2º columna van los textos personalizados de error
-     * @param matriz
+     * @param matriz matriz donde comprueba los vacios
      * @return Cadena con todos los errores
      */
     public static String comprobarVacios(Object matriz[][]){

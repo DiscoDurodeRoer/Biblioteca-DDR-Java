@@ -4,7 +4,7 @@ import es.discoduroderoer.expresiones_regulares.ExpresionesRegulares;
 import javax.swing.JOptionPane;
 
 /**
- * @author Fernando
+ * @author DiscoDurodeRoer
  */
 public class Conversion {
 

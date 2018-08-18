@@ -7,16 +7,16 @@ package es.discoduroderoer.fechas;
 
 /**
  *
- * @author Fernando
+ * @author DiscoDurodeRoer
  */
 public class Horas {
 
     /**
      * devuelve la diferencia entre dos horas
      * solo horas en punto y media hora (08:00, 08:30, 09:00)
-     * @param horaInicio
-     * @param horaFin
-     * @return 
+     * @param horaInicio hora de incio
+     * @param horaFin hora de fin
+     * @return Diferencia entre dos horas
      */
     public static double numeroHoras(String horaInicio, String horaFin) {
 

@@ -8,7 +8,7 @@ package es.discoduroderoer.clases.documentos;
 
 /**
  *
- * @author fernandos
+ * @author DiscoDurodeRoer
  */
 public final class CIF extends Documento{
     

@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.discoduroderoer.matrices;
 
 /**
  *
- * @author Fernando
+ * @author DiscoDurodeRoer
  */
-public class MostrarMatriz {
+public class Mostrar {
 
     /**
      * Muestra los datos por consola de una matriz de int
      *
-     * @param matriz
+     * @param matriz Matriz a mostrar
      */
     public static void mostrarMatriz(int matriz[][]) {
 
@@ -29,7 +24,7 @@ public class MostrarMatriz {
     /**
      * Muestra los datos por consola de una matriz de long
      *
-     * @param matriz
+     * @param matriz Matriz a mostrar
      */
     public static void mostrarMatriz(long matriz[][]) {
 
@@ -44,7 +39,7 @@ public class MostrarMatriz {
     /**
      * Muestra los datos por consola de una matriz de String
      *
-     * @param matriz
+     * @param matriz Matriz a mostrar
      */
     public static void mostrarMatriz(String matriz[][]) {
 
@@ -59,7 +54,7 @@ public class MostrarMatriz {
     /**
      * Muestra los datos por consola de una matriz de double
      *
-     * @param matriz
+     * @param matriz Matriz a mostrar
      */
     public static void mostrarMatriz(double matriz[][]) {
 
@@ -74,9 +69,9 @@ public class MostrarMatriz {
     /**
      * Muestra por consola, el estado de la matriz
      *
-     * @param matriz
+     * @param matriz Matriz a mostrar
      */
-    public static void mostrarMatrizConsola(Object matriz[][]) {
+    public static void mostrarMatriz(Object matriz[][]) {
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
@@ -96,20 +91,20 @@ public class MostrarMatriz {
     /**
      * Muestra una matriz de forma recursiva
      *
-     * @param m
-     * @param i
-     * @param j
+     * @param matriz Matriz a mostrar
+     * @param i Fila actual
+     * @param j Columna actual
      */
-    public static void mostrarMatrizRec(int[][] m, int i, int j) {
+    public static void mostrarMatrizRec(int[][] matriz, int i, int j) {
 
         //Muestro el numero (sin salto de linea)
-        System.out.print(m[i][j] + " ");
+        System.out.print(matriz[i][j] + " ");
 
         //
-        if (i != m.length - 1 || j != m[i].length - 1) {
+        if (i != matriz.length - 1 || j != matriz[i].length - 1) {
 
             //Indico si llego al final de la fila
-            if (j == m[i].length - 1) {
+            if (j == matriz[i].length - 1) {
                 //Paso a la siguiente fila
                 i++;
                 //Reinicio la j
@@ -122,7 +117,7 @@ public class MostrarMatriz {
             }
 
             //Volvemos a llamar la función recursivamente
-            mostrarMatrizRec(m, i, j);
+            mostrarMatrizRec(matriz, i, j);
 
         }
 

@@ -36,9 +36,9 @@ public class Numeros {
     /**
      * Devuelve el minimo numero de un array recursivamente
      *
-     * @param numeros
-     * @param indice
-     * @return
+     * @param numeros Conjunto de numeros
+     * @param indice Indice donde se encuentra
+     * @return El minimo del array
      */
     public static int minimoRec(int[] numeros, int indice) {
 
@@ -84,6 +84,7 @@ public class Numeros {
      * Indica cual es el mayor número de un array recursivamente
      *
      * @param numeros Array de int
+     * @param indice Indice donde se encuentra
      * @return Mayor número
      */
     public static int maximoRec(int[] numeros, int indice) {
@@ -155,10 +156,10 @@ public class Numeros {
     /**
      * Indica la posicion de un elemento recursivamente
      *
-     * @param array
-     * @param elementoBuscar
-     * @param indice
-     * @return
+     * @param array Conjunto de numeros
+     * @param elementoBuscar Numero buscado
+     * @param indice Indice donde se encuentra
+     * @return Posicion del numero buscado, -1 en caso de no encontrarlo
      */
     public static int posicionElementoRecursivo(int[] array, int elementoBuscar, int indice) {
 
@@ -223,8 +224,8 @@ public class Numeros {
     /**
      * Devuelve el numero fibonacci dado su posicion
      *
-     * @param n
-     * @return
+     * @param n Posicion del numero fibonacci
+     * @return Numero de la lista de fibonacci
      */
     public static int fibonacciRecursivo(int n) {
 
@@ -242,6 +243,12 @@ public class Numeros {
 
     }
 
+    /**
+     * Suma de los digitos de un numero
+     *
+     * @param numeroInicial Numero a sumar
+     * @return Suma de sus digitos
+     */
     public static int sumaDigitos(int numeroInicial) {
 
         int numero = numeroInicial;
@@ -257,6 +264,12 @@ public class Numeros {
         return suma;
     }
 
+    /**
+     * Devuelve los digitos de un numero en un array
+     *
+     * @param numeroInicial Numero al que extraer los digitos
+     * @return Array con cada uno de los digitos
+     */
     public static int[] devuelveDigitos(int numeroInicial) {
 
         int numero = numeroInicial;
@@ -274,12 +287,26 @@ public class Numeros {
 
     }
 
+    /**
+     * Redondea decimales a un numero double elegido
+     *
+     * @param numero Numero a redondear
+     * @param numeroDecimales Nbumero de decimales a redondear
+     * @return Numero redondeado
+     */
     public static double redondeoDecimales(double numero, int numeroDecimales) {
         BigDecimal redondeado = new BigDecimal(numero)
                 .setScale(numeroDecimales, RoundingMode.HALF_EVEN);
         return redondeado.doubleValue();
     }
 
+    /**
+     * Redondea decimales a un numero float elegido
+     *
+     * @param numero Numero a redondear
+     * @param numeroDecimales Nbumero de decimales a redondear
+     * @return Numero redondeado
+     */
     public static float redondeoDecimales(float numero, int numeroDecimales) {
         BigDecimal redondeado = new BigDecimal(numero)
                 .setScale(numeroDecimales, RoundingMode.HALF_EVEN);
@@ -289,18 +316,18 @@ public class Numeros {
     /**
      * Devuelve un numero invertido
      *
-     * @param num
-     * @param pos
-     * @return
+     * @param num Numero a invertir
+     * @param pos Posicion actual
+     * @return Devuelve el numero invertido
      */
-    public static int invertirNum(int num, int pos) {
+    public static int invertirNumRec(int num, int pos) {
 
         //Si es menor que 10 devuelvo el numero (el ultimo numero)
         if (num < 10) {
             return num;
         } else {
             //Cojo el modulo del numero y lo multiplico por la potencia (4 * 100) por ejemplo
-            return (num % 10) * (int) Math.pow(10, pos) + (invertirNum(num / 10, pos - 1));
+            return (num % 10) * (int) Math.pow(10, pos) + (invertirNumRec(num / 10, pos - 1));
         }
 
     }
