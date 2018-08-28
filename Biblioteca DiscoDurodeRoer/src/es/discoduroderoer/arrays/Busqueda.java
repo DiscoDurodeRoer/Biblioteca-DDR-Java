@@ -41,33 +41,4 @@ public class Busqueda {
         return pos;
     }
     
-    /**
-     * Busca una cadena en un array
-     * Necesita que el array este ordenado
-     * @param array Array que queremos ordenar
-     * @param cadenaBuscada Cadena que queremos buscar en el array
-     * @return Posicion de la cadena
-     */
-    public static int buscarBin (String array[], String cadenaBuscada){
-        int izq=0;
-        int der=array.length;
-        boolean encontrado=false;
-        int pos=-1;
-
-        for(int i=0;!encontrado && i<array.length;i++){
-            int central=(izq+der)/2;
-            if (array[central].compareToIgnoreCase(cadenaBuscada)<=1){
-                if (array[central].equals(cadenaBuscada)){
-                    encontrado=true;
-                    pos=(izq+der)/2;
-                }else{
-                    izq=(izq+der)/2;
-                }
-            }else{
-                der=(izq+der)/2;
-            }
-        }
-        return pos;
-    }
-    
 }
