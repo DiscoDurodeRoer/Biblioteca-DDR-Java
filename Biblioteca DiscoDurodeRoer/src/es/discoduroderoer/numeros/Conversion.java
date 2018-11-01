@@ -114,6 +114,17 @@ public class Conversion {
         return octal;
     }
 
+    public static int decimalaAOctal(int decimal) {
+        int octal = 0;
+        int digito;
+        final int DIVISOR = 8;
+        for (int i = decimal, j = 0; i > 0; i /= DIVISOR, j++) {
+            digito = i % DIVISOR;
+            octal += digito * Math.pow(10, j);
+        }
+        return octal;
+    }
+
     /**
      * Convierte de decimal a hexadecimal
      *

@@ -183,7 +183,7 @@ public class MiSwing {
      *
      * @param enlaceAAceder Enlace a abrir
      */
-    public void enlace(String enlaceAAceder) {
+    public static void enlace(String enlaceAAceder) {
         Desktop enlace = Desktop.getDesktop();
         try {
             enlace.browse(new URI(enlaceAAceder));

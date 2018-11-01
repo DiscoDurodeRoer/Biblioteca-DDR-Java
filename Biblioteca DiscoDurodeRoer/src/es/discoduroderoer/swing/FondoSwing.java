@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
@@ -46,6 +47,11 @@ public class FondoSwing implements Border {
     }
 
     public void setBorder(JFrame frame) {
+        JPanel panel = (JPanel) frame.getContentPane();
+        panel.setBorder(this);
+    }
+
+    public void setBorder(JDialog frame) {
         JPanel panel = (JPanel) frame.getContentPane();
         panel.setBorder(this);
     }
