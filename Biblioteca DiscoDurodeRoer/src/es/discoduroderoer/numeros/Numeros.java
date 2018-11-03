@@ -42,17 +42,14 @@ public class Numeros {
      */
     public static int minimoRec(int[] numeros, int indice) {
 
-        int minimo = Integer.MAX_VALUE;
-
-        //Cuando el indice sea igual a la longitud del array, terminaremos la recursividad
-        if (indice != numeros.length) {
-
+        //Cuando el indice sea igual a la longitud del array menos uno, terminaremos la recursividad
+        if (indice == numeros.length - 1) {
+            return numeros[indice];
+        } else {
             //Comparamos el 1º con el 2º, el 2º con el 3º, etc.
-            minimo = Math.min(numeros[indice], minimoRec(numeros, indice + 1));
+            return Math.min(numeros[indice], minimoRec(numeros, indice + 1));
 
         }
-
-        return minimo;
 
     }
 
@@ -89,17 +86,15 @@ public class Numeros {
      */
     public static int maximoRec(int[] numeros, int indice) {
 
-        int maximo = Integer.MIN_VALUE;
-
-        //Cuando el indice sea igual a la longitud del array, terminaremos la recursividad
-        if (indice != numeros.length) {
+        //Cuando el indice sea igual a la longitud del array menos uno, terminaremos la recursividad
+        if (indice == numeros.length - 1) {
+            return numeros[indice];
+        } else {
 
             //Comparamos el 1º con el 2º, el 2º con el 3º, etc.
-            maximo = Math.max(numeros[indice], maximoRec(numeros, indice + 1));
+            return Math.max(numeros[indice], maximoRec(numeros, indice + 1));
 
         }
-
-        return maximo;
 
     }
 
