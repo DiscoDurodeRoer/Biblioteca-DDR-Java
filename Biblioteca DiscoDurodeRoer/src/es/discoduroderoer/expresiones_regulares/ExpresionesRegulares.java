@@ -57,6 +57,7 @@ public class ExpresionesRegulares {
     /**
      * Valida si una cadena es un numero real (positivo o negativo) con un
      * numero de decimales
+     *
      * @param texto String que contiene el valor a validar
      * @param num_deciamales numero de decimales maximo, no puede ser menor que
      * cero
@@ -233,9 +234,10 @@ public class ExpresionesRegulares {
         return DNI.matches("^[0-9]{8}[T|R|W|A|G|M|Y|F|P|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$");
 
     }
-    
+
     /**
-     * Valida si una cadena tiene el formato de nombre de persona, incluyendo nombres compuestos
+     * Valida si una cadena tiene el formato de nombre de persona, incluyendo
+     * nombres compuestos
      *
      * @param texto String que contiene el valor a validar
      * @return True = es un nombre válido
@@ -256,7 +258,7 @@ public class ExpresionesRegulares {
         return matricula.matches("^[0-9]{4}[A-Z]{3}$");
 
     }
-    
+
     /**
      * Valida si una cadena es un usuario de twitter
      *
@@ -268,7 +270,7 @@ public class ExpresionesRegulares {
         return usuario_twitter.matches("^@([A-Za-z0-9_]{1,15})$");
 
     }
-    
+
     /**
      * Valida si una cadena es un ISBN de 13 digitos
      *
@@ -279,5 +281,14 @@ public class ExpresionesRegulares {
 
         return ISBN.matches("^(978|979)[0-9]{9}$");
 
+    }
+
+    /**
+     * Valida si una cadena tiene formato de telefono (9 numeros)
+     * @param texto
+     * @return 
+     */
+    public static boolean validarTelefono_Exp(String texto) {
+        return texto.matches("[0-9]{9}");
     }
 }
