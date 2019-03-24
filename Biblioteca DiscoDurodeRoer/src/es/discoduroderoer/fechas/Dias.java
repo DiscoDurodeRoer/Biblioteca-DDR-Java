@@ -8,6 +8,7 @@ package es.discoduroderoer.fechas;
 
 import static es.discoduroderoer.fechas.Anios.esBisiesto;
 import static es.discoduroderoer.fechas.Meses.mesCorrecto;
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -147,6 +148,34 @@ public class Dias {
         }
         
         return numeroDias;
+    }
+    
+    public static int calculaDias(int dia, int mes, int anio, boolean incluirFin) {
+        
+        Calendar inicio = Calendar.getInstance();
+        inicio.set(anio, mes - 1, dia);
+        inicio.set(Calendar.HOUR, 0);
+        inicio.set(Calendar.HOUR_OF_DAY, 0);
+        inicio.set(Calendar.MINUTE, 0);
+        inicio.set(Calendar.SECOND, 0);
+        
+        Calendar actual = Calendar.getInstance();
+        actual.set(Calendar.HOUR, 0);
+        actual.set(Calendar.HOUR_OF_DAY, 0);
+        actual.set(Calendar.MINUTE, 0);
+        actual.set(Calendar.SECOND, 0);
+        
+        long finMS = actual.getTimeInMillis();
+        long inicioMS = inicio.getTimeInMillis();
+        
+        int dias = (int) ((Math.abs(finMS - inicioMS)) / (86400000) ); //86400000
+        
+        if(incluirFin){
+            dias++;
+        }
+        
+        return dias;
+
     }
     
 }

@@ -6,6 +6,8 @@
 
 package es.discoduroderoer.fechas;
 
+import java.util.Calendar;
+
 /**
  * @author DiscoDurodeRoer
  */
@@ -54,5 +56,23 @@ public class Meses {
         
     }
     
+    public static int calculaMeses(int dia, int mes, int anio) {
+
+        Calendar inicio = Calendar.getInstance();
+        inicio.set(anio, mes - 1, dia);
+
+        Calendar actual = Calendar.getInstance();
+
+        int anios_diferencia = Anios.calcularAniosV2(dia, mes, anio);
+
+        int meses = Math.abs((anios_diferencia * 12) + (actual.get(Calendar.MONTH) - inicio.get(Calendar.MONTH)));
+
+        if (actual.get(Calendar.DATE) < dia) {
+            meses--;
+        }
+
+        return meses;
+
+    }
     
 }
