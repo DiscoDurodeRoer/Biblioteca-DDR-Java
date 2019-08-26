@@ -151,6 +151,29 @@ public class ErroresFormulario {
         }
     }
 
+    public void validarMayorQue(String numeroComoTexto, int mayorQue) {
+        if (!ExpresionesRegulares.validaNumeroEntero_Exp(numeroComoTexto)) {
+            this.errores.append("- El Valor introducido debe ser un número");
+        } else {
+            int valor = Integer.parseInt(numeroComoTexto);
+            if (valor > mayorQue) {
+                this.errores.append("- El valor1 no puede ser mayor que el valor 2");
+            }
+        }
+
+    }
+
+    public void validarMayorQue(String numeroComoTexto, int mayorQue, String mensajeErrorNoNumero, String mensajeErrorMayor) {
+        if (!ExpresionesRegulares.validaNumeroEntero_Exp(numeroComoTexto)) {
+            this.errores.append(mensajeErrorNoNumero);
+        } else {
+            int valor = Integer.parseInt(numeroComoTexto);
+            if (valor > mayorQue) {
+                this.errores.append(mensajeErrorMayor);
+            }
+        }
+    }
+
     public void validarEmail(String email) {
         if (!email.isEmpty() && !ExpresionesRegulares.validar_Mail_Exp(email)) {
             this.errores.append("- El email no tiene el formato correcto \n");
