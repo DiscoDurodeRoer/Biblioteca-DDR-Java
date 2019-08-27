@@ -186,7 +186,7 @@ public class Numeros {
             contador = 1;
         } else {
 
-            for (int i = Math.abs(num); i > 0; i++) {
+            for (int i = Math.abs(num); i > 0; i/=10) {
                 contador++;
             }
 
