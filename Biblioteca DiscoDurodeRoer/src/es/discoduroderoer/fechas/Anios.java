@@ -20,7 +20,7 @@ public class Anios {
      * @param anio Año
      * @return True = es bisiesto
      */
-    public static boolean esBisiesto(int anio) {
+    public static boolean esBisiestoGregorian(int anio) {
 
         GregorianCalendar calendar = new GregorianCalendar();
         boolean esBisiesto = false;
@@ -29,6 +29,17 @@ public class Anios {
         }
         return esBisiesto;
 
+    }
+
+    /**
+     * Indica si un año es bisiesto o no
+     *
+     * @param anio Año
+     * @return True = es bisiesto
+     */
+    public static boolean esBisiesto(int anio) {
+
+        return (anio % 4 == 0 && anio % 100 != 0) || (anio % 100 == 0 && anio % 400 == 0);
     }
 
     /**
@@ -80,7 +91,7 @@ public class Anios {
      * @param anio
      * @return
      */
-    public static int calcularAniosV2(int dia, int mes, int anio) {
+    public static int calcularAniosCalendar(int dia, int mes, int anio) {
 
         //seteamo el dia mes y año
         Calendar inicio = Calendar.getInstance();
@@ -94,6 +105,51 @@ public class Anios {
 
         //Si el año del dia de la fecha que yo paso es mayor que la actual, resto uno
         if (inicio.get(Calendar.DAY_OF_YEAR) > actual.get(Calendar.DAY_OF_YEAR)) {
+            diferencia--;
+        }
+
+        return diferencia;
+
+    }
+
+    /**
+     * Indica la diferencia de años entre un dia concreto y la fecha actual
+     * Hecho con Calendar
+     *
+     * @param inicio
+     * @return
+     */
+    public static int calcularAniosCalendar(Calendar inicio) {
+
+        //Dia actual
+        Calendar actual = Calendar.getInstance();
+
+        //Calcula la diferencia de años
+        int diferencia = actual.get(Calendar.YEAR) - inicio.get(Calendar.YEAR);
+
+        //Si el año del dia de la fecha que yo paso es mayor que la actual, resto uno
+        if (inicio.get(Calendar.DAY_OF_YEAR) > actual.get(Calendar.DAY_OF_YEAR)) {
+            diferencia--;
+        }
+
+        return diferencia;
+
+    }
+
+    /**
+     * Indica la diferencia de años entre dos Calendar.
+     *
+     * @param inicio fecha inicial
+     * @param fin fecha final
+     * @return
+     */
+    public static int calcularAniosCalendar(Calendar inicio, Calendar fin) {
+
+        //Calcula la diferencia de años
+        int diferencia = fin.get(Calendar.YEAR) - inicio.get(Calendar.YEAR);
+
+        //Si el año del dia de la fecha que yo paso es mayor que la actual, resto uno
+        if (inicio.get(Calendar.DAY_OF_YEAR) > fin.get(Calendar.DAY_OF_YEAR)) {
             diferencia--;
         }
 

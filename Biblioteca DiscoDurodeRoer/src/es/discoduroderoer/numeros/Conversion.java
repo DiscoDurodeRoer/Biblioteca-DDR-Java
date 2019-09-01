@@ -9,91 +9,42 @@ import javax.swing.JOptionPane;
 public class Conversion {
 
     /**
-     * Convierte de binario a decimal
+     * Convierte de decimal a binario. Solo positivos
      *
-     * @param numerobinario Cadena de 0 y 1
-     * @return Valor decimal
+     * @param decimal Decimal a convertir
+     * @return numero en formato binario, -1 si el numero es negativo
      */
-    public static int binarioADecimal(String numerobinario) {
-
-        int res = 0;
-        try {
-            int longitud = numerobinario.length();
-            boolean numeroCorrecto = true;
-            for (int cont = 0, posicion = longitud - 1; cont <= (longitud - 1) && numeroCorrecto; cont++, posicion--) {
-                if (numerobinario.charAt(cont) == '0' || numerobinario.charAt(cont) == '1') {
-                    String texto = numerobinario.substring(cont, cont + 1);
-                    int numero = Integer.parseInt(texto);
-                    res = res + (numero * ((int) Math.pow(2, posicion)));
-                } else {
-                    numeroCorrecto = false;
-                }
-            }
-
-            if (numeroCorrecto) {
-                return res;
-            } else {
-                JOptionPane.showMessageDialog(null, "No has introducido un numero binario, solo puedes escribir 0 y 1", "Error", JOptionPane.ERROR_MESSAGE);
-                return -1;
-            }
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "La cadena pasada es incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-            return -1;
-        }
-    }
-
-    /**
-     * Convierte de binario a decimal
-     *
-     * @param numerobinario Número con 0 y 1
-     * @return Valor decimal
-     */
-    public static int binarioADecimal(int numerobinario) {
-
-        String auxliar = String.valueOf(numerobinario);
-
-        int res = 0;
-        int longitud = auxliar.length();
-        boolean numeroCorrecto = true;
-        for (int cont = 0, posicion = longitud - 1; cont <= (longitud - 1) && numeroCorrecto; cont++, posicion--) {
-            if (auxliar.charAt(cont) == '0' || auxliar.charAt(cont) == '1') {
-                String texto = auxliar.substring(cont, cont + 1);
-                int numero = Integer.parseInt(texto);
-                res = res + (numero * ((int) Math.pow(2, posicion)));
-            } else {
-                numeroCorrecto = false;
-            }
-        }
-
-        if (numeroCorrecto) {
-            return res;
-        } else {
-            JOptionPane.showMessageDialog(null, "No has introducido un numero binario, solo puedes escribir 0 y 1", "Error", JOptionPane.ERROR_MESSAGE);
-            return -1;
-        }
-
-    }
-
-    /**
-     * Convierte de decimal a binario
-     *
-     * @param numero Número decimal
-     * @return Cadena de 0 y 1
-     */
-    public static String decimalABinario(int numero) {
-        String binario = "";
-        String digito;
-        for (int i = numero; i > 0; i /= 2) {
-            if (i % 2 == 1) {
-                digito = "1";
-            } else {
-                digito = "0";
-            }
-
-            binario = digito + binario;
+    public static long decimalABinario(int decimal) {
+        long binario = -1;
+        int digito;
+        final int DIVISOR = 2;
+        for (int i = decimal, j = 0; i > 0; i /= DIVISOR, j++) {
+            digito = i % DIVISOR;
+            binario += digito * Math.pow(10, j);
         }
         return binario;
+    }
+
+    /**
+     * Convierte de decimal a binario. Solo positivos
+     *
+     * @param binario Binario a convertir en formato numerico
+     * @return numero en formato decimal, -1 si no es un numero binario
+     */
+    public static int binarioADecimal(long binario) {
+
+        int decimal = 0;
+        int digito;
+        final long DIVISOR = 10;
+        for (long i = binario, j = 0; i > 0; i /= DIVISOR, j++) {
+            digito = (int) (i % DIVISOR);
+            if (digito != 0 && digito != 1) {
+                return -1;
+            }
+            decimal += digito * Math.pow(2, j);
+        }
+        return decimal;
+
     }
 
     /**
@@ -223,6 +174,27 @@ public class Conversion {
             JOptionPane.showMessageDialog(null, "Error");
             return -1;
         }
+
+    }
+
+    /**
+     * Convierte de decimal a binario. Solo positivos
+     *
+     * @param numero Numero a convertir
+     * @param basex Base del numero a convertir
+     * @param basey Base a la que queremos convertir
+     * @return numero en formato decimal
+     */
+    public static int basexABaseY(long numero, int basex, int basey) {
+
+        int decimal = 0;
+        int digito;
+        final long DIVISOR = basex;
+        for (long i = numero, j = 0; i > 0; i /= DIVISOR, j++) {
+            digito = (int) (i % DIVISOR);
+            decimal += digito * Math.pow(basey, j);
+        }
+        return decimal;
 
     }
 

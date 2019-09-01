@@ -171,6 +171,132 @@ public class Array {
 
     }
 
+    /**
+     * Indica si un elemento dentro de un array esta repetido
+     *
+     * @param array array a comprobar
+     * @return si hay o no algun elemento repetido
+     */
+    public static boolean elementoRepetido(int[] array) {
+
+        // Recorremos el array la 1º vez
+        for (int i = 0; i < array.length; i++) {
+
+            // Recorremos el mismo array
+            for (int j = i + 1; j < array.length; j++) {
+                // Si coincide significa que hay un elemento repetido
+                if (array[i] == array[j]) {
+                    return true;
+                }
+            }
+
+        }
+
+        // No hay un elemento repetido
+        return false;
+
+    }
+
+    /**
+     * Indica si un elemento esta repetido en otro array.
+     *
+     * @param array1 Primer array
+     * @param array2 Segundo array
+     * @return si hay o no algun elemento repetido
+     */
+    public static boolean elementoRepetido(int[] array1, int[] array2) {
+
+        // Recorro el primer array
+        for (int i = 0; i < array1.length; i++) {
+
+            // Recorro el segundo array
+            for (int j = 0; j < array2.length; j++) {
+                // Si coincide hay un elemento repetido
+                if (array1[i] == array2[j]) {
+                    return true;
+                }
+            }
+
+        }
+
+        // No hay elemento repetido
+        return false;
+
+    }
+
+    /**
+     * Indica cuantas veces se repite un elemento en el arrat dado
+     *
+     * @param array Array a comprobar
+     * @param elemento Elemento a buscar
+     * @return Numero de repeticiones del elemento en el array
+     */
+    public static int numeroElementosRepetido(int[] array, int elemento) {
+
+        int repetidos = 0;
+        for (int i = 0; i < array.length; i++) {
+            // Si coincide, tenemos un repetido mas
+            if (array[i] == elemento) {
+                repetidos++;
+            }
+        }
+
+        return repetidos;
+    }
+
+    /**
+     * Indica cuantos repetidos hay en dos arrays, sin contar los que estan en
+     * la misma posicion
+     *
+     * @param array1 Primer array
+     * @param array2 Segundo array
+     * @return Numero de repeticiones en ambos arrays sin contar los que estan
+     * en la misma posicion
+     */
+    public static int numeroElementosRepetidosDistintaPosicion(int[] array1, int[] array2) {
+
+        int repetidos = 0;
+        for (int i = 0; i < array1.length; i++) {
+
+            for (int j = 0; j < array2.length; j++) {
+                // Sino es la misma posicion y son igaules, aumento los repetidos
+                if (i != j && array1[i] == array2[j]) {
+                    repetidos++;
+                }
+            }
+        }
+        return repetidos;
+    }
+
+    /**
+     * Indico cuando elementos repetidos hay en dos arrays. Solo arrays con la
+     * misma longitud y en la misma posicion.
+     *
+     * @param array1 Primer array
+     * @param array2 Segundo array
+     * @return Numero de repeticiones en ambos arrays. Devuelve -1 en caso de
+     * que sean de logitudes diferentes
+     */
+    public static int numeroElementosRepetidosMismaPosicion(int[] array1, int[] array2) {
+
+        // Si son de diferentes longitudes, devuelvo -1
+        if (array1.length != array2.length) {
+            return -1;
+        }
+
+        int repetidos = 0;
+
+        for (int i = 0; i < array1.length; i++) {
+            // Si son iguales, aumento los repetidos
+            if (array1[i] == array2[i]) {
+                repetidos++;
+            }
+        }
+
+        return repetidos;
+
+    }
+
     private static String devuelveTipoDato(String tipoCompleto) {
 
         String tipo;

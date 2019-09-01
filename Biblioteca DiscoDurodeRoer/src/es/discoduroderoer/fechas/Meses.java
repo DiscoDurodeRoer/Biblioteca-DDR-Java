@@ -63,7 +63,7 @@ public class Meses {
 
         Calendar actual = Calendar.getInstance();
 
-        int anios_diferencia = Anios.calcularAniosV2(dia, mes, anio);
+        int anios_diferencia = Anios.calcularAniosCalendar(dia, mes, anio);
 
         int meses = Math.abs((anios_diferencia * 12) + (actual.get(Calendar.MONTH) - inicio.get(Calendar.MONTH)));
 
