@@ -177,8 +177,9 @@ public class Conversion {
 
     }
 
+    
     /**
-     * Convierte de decimal a binario. Solo positivos
+     * Convierte un numero de una base a otra
      *
      * @param numero Numero a convertir
      * @param basex Base del numero a convertir
@@ -187,14 +188,22 @@ public class Conversion {
      */
     public static int basexABaseY(long numero, int basex, int basey) {
 
-        int decimal = 0;
-        int digito;
-        final long DIVISOR = basex;
-        for (long i = numero, j = 0; i > 0; i /= DIVISOR, j++) {
-            digito = (int) (i % DIVISOR);
-            decimal += digito * Math.pow(basey, j);
+        if (basex == 10 || basey == 10) {
+            int decimal = 0;
+            int digito;
+            final long DIVISOR = basey;
+            for (long i = numero, j = 0; i > 0; i /= DIVISOR, j++) {
+                digito = (int) (i % DIVISOR);
+                decimal += digito * Math.pow(basex, j);
+            }
+            return decimal;
+        } else {
+            // Lo paso a decimal
+            int aDecimal = basexABaseY(numero, basex, 10);
+            // Lo paso a la base deseada
+            int numeroBaseY = basexABaseY(aDecimal, 10, basey);
+            return numeroBaseY;
         }
-        return decimal;
 
     }
 
