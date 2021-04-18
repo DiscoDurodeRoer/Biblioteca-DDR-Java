@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.discoduroderoer.fechas;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.time.LocalDate;
+
 
 /**
  * @author DiscoDurodeRoer
@@ -41,8 +38,48 @@ public class Anios {
 
         return (anio % 4 == 0 && anio % 100 != 0) || (anio % 100 == 0 && anio % 400 == 0);
     }
+    
+     /**
+     * Indica la diferencia de años entre un dia concreto y la fecha actual
+     * Hecho con LocalDate
+     *
+     * @param dia
+     * @param mes
+     * @param anio
+     * @return
+     */
+    public static int calcularAnios(int dia, int mes, int anio) {
 
-    /**
+        //Fecha actual
+        LocalDate actual = LocalDate.now();
+
+        //Cojo los datos necesarios        
+        int diaActual = actual.getDayOfMonth();
+        int mesActual = actual.getMonthValue();
+        int anioActual = actual.getYear();
+
+        //Diferencia de años
+        int diferencia = anioActual - anio;
+
+        //Si el mes actual es menor que el que me pasan le resto 1
+        //Si el mes es igual y el dia que me pasan es mayor al actual le resto 1
+        //Si el mes es igual y el dia que me pasan es menor al actual no le resto 1
+        if (mesActual <= mes) {
+            //si
+            if (mesActual == mes) {
+                if (dia > diaActual) {
+                    diferencia--;
+                }
+            } else {
+                diferencia--;
+            }
+        }
+
+        return diferencia;
+
+    }
+    
+     /**
      * Indica la diferencia de años entre un dia concreto y la fecha actual
      * Hecho con Date
      *
@@ -51,7 +88,8 @@ public class Anios {
      * @param anio
      * @return
      */
-    public static int calcularAnios(int dia, int mes, int anio) {
+    @Deprecated
+    public static int calcularAniosDate(int dia, int mes, int anio) {
 
         //Fecha actual
         Date actual = new Date();

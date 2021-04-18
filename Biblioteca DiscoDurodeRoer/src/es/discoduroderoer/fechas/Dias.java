@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.discoduroderoer.fechas;
 
 import static es.discoduroderoer.fechas.Anios.esBisiesto;
 import static es.discoduroderoer.fechas.Meses.mesCorrecto;
+import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,9 +40,8 @@ public class Dias {
                     numeroDias = 30;
                     break;
                 case "febrero":
-
-                    Date anioActual = new Date();
-                    if (esBisiesto(1900 + anioActual.getYear())) {
+                    LocalDate anioActual = LocalDate.now();
+                    if (esBisiesto(anioActual.getYear())) {
                         numeroDias = 29;
                     } else {
                         numeroDias = 28;
@@ -90,9 +84,8 @@ public class Dias {
                 numeroDias = 30;
                 break;
             case 2:
-
-                Date anioActual = new Date();
-                if (esBisiesto(1900 + anioActual.getYear())) {
+                LocalDate anioActual = LocalDate.now();                
+                if (esBisiesto(anioActual.getYear())) {
                     numeroDias = 29;
                 } else {
                     numeroDias = 28;
@@ -174,9 +167,7 @@ public class Dias {
                 numeroDias = 30;
                 break;
             case 2:
-
-                Date anioActual = new Date();
-                if (esBisiesto(1900 + anioActual.getYear())) {
+                if (esBisiesto(anio)) {
                     numeroDias = 29;
                 } else {
                     numeroDias = 28;
