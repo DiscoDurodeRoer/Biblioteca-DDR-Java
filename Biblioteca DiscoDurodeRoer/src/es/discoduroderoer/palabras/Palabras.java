@@ -67,6 +67,42 @@ public class Palabras {
         return texto;
 
     }
+    
+    /**
+     * Indica si una palabra es un palindromo o no
+     * @param cadena palabra a comprobar
+     * @return true si es palindromo
+     */
+    public static boolean esPalindromo(String cadena){
+        
+        String cadenaInvertida = invertirCadena(cadena);
+        
+        // Comprobamos si es palindromo o no
+        return cadena.equalsIgnoreCase(cadenaInvertida);
+    }
+    
+    
+    /**
+     * Invierte una palabra
+     *
+     * @param cadena Palabra a invertir
+     * @return cadena invertida
+     */
+    public static String invertirCadena(String cadena){
+        
+        cadena = cadena.toLowerCase();
+        String cadenaInvertida = "";
+        
+        // Invertimos la cadena
+        char caracter;
+        for (int i = cadena.length() - 1; i >= 0; i--) {
+            caracter = cadena.charAt(i);
+            cadenaInvertida += caracter;
+        }
+        
+        return cadenaInvertida;
+    }
+    
 
     /**
      * Invierte una palabra

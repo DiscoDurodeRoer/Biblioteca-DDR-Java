@@ -168,7 +168,7 @@ public class Calculo {
 
     /**
      * Devuelve la potencia de un numero recursivamente
-     * 
+     *
      * @param base Base del numero
      * @param exponente Exponente a elevar
      * @return Base elevado al exponente
@@ -220,113 +220,115 @@ public class Calculo {
      * Devuelve el menor divisor de un numero, sea negativo o positivo Si es
      * primo devuelve 1, segun el signo puede ser -1 o 1
      *
-     * @param num Número inicial
+     * @param numero Número inicial
      * @return Número que es el menor divisor del parámetro num
      */
-    public static int menorDivisor(int num) {
+    public static int menorDivisor(int numero) {
 
-        if (esPrimo(num)) {
+        int numeroAbsoluto = Math.abs(numero);
 
-            if (num >= 0) {
-                return 1;
-            } else {
+        // Si es primo, retornamos el numero
+        if (numeroAbsoluto == 1 || esPrimo(numeroAbsoluto)) {
+            if (numero < 0) {
                 return -1;
+            } else {
+                return 1;
+            }
+        } else {
+            int menorDivisor = 0;
+            boolean encontrado = false;
+
+            // Empezamos desde el 2 hasta el numero
+            for (int i = 2; i > numeroAbsoluto && !encontrado; i++) {
+                // Buscamos el primer divisor
+                if (numeroAbsoluto % i == 0) {
+                    encontrado = true;
+                    menorDivisor = i;
+                }
             }
 
-        } else {
-
-            int divisores[] = rellenaDivisores(num);
-
-            return divisores[0];
-
+            // Mostramos el número
+            if (numero < 0) {
+                return -menorDivisor;
+            } else {
+                return menorDivisor;
+            }
         }
-
     }
 
     /**
-     * Indica el mayor divisor de un numero, sin incluir el numero como tal. Si
-     * es primo devuelve 1, segun el signo puede ser -1 o 1
+     * Indica el mayor divisor de un numero, sin incluir el numero como tal. 
+     * Si es primo devuelve el propio numero, segun el signo puede ser -1 o 1
      *
-     * @param num Número inicial
+     * @param numero Número inicial
      * @return Número que es el mayor divisor del parámetro num
      */
-    public static int mayorDivisor(int num) {
+    public static int mayorDivisor(int numero) {
 
-        if (esPrimo(num)) {
+        int numeroAbsoluto = Math.abs(numero);
 
-            if (num >= 0) {
-                return 1;
-            } else {
-                return -1;
+        // Si es primo, retornamos el numero
+        if (esPrimo(numeroAbsoluto)) {
+            return numero;
+        } else {
+            int mayorDivisor = 0;
+            boolean encontrado = false;
+
+            // Empiezo desde el numero hasta el 1
+            for (int i = numeroAbsoluto - 1; i > 1 && !encontrado; i--) {
+                // Compruebo si es divisible
+                if (numeroAbsoluto % i == 0) {
+                    encontrado = true;
+                    mayorDivisor = i;
+                }
             }
 
-        } else {
-
-            int divisores[] = rellenaDivisores(num);
-
-            return divisores[divisores.length - 1];
-
+            // Segun si es negativo o no el número
+            if (numero < 0) {
+                return -mayorDivisor;
+            } else {
+                return mayorDivisor;
+            }
         }
-
     }
 
     /**
-     * Rellena un array con los divisores de un numero, sin incluir el 1 y el
-     * propio numero
+     * Rellena un array con los divisores de un numero, incluyendo
      *
-     * @param num Número inicial
+     * @param numero Número inicial
      * @return Array con todos los divisores
      */
-    public static int[] rellenaDivisores(int num) {
-
-        int divisor[] = new int[cuentaDivisores(num)];
-
-        if (num >= 0) {
-            for (int i = 2, j = 0; i < num && j < divisor.length; i++) {
-
-                if (num % i == 0) {
-                    divisor[j] = i;
-                    j++;
+    public static int[] obtenerDivisores(int numero) {
+        int numPositive = Math.abs(numero);
+        int numDivisores = cuentaDivisores(numero);
+        int divisores[] = new int[numDivisores];
+        for (int i = 1, j = 0; i <= numPositive && j < divisores.length; i++) {
+            if (numPositive % i == 0) {
+                if (numero < 0) {
+                    divisores[j] = -i;
+                } else {
+                    divisores[j] = i;
                 }
-
-            }
-        } else {
-            for (int i = -2, j = 0; i > num && j < divisor.length; i--) {
-
-                if (num % i == 0) {
-                    divisor[j] = i;
-                    j++;
-                }
-
+                j++;
             }
         }
-
-        return divisor;
+        return divisores;
     }
 
     /**
      * Devuelve el numero de divisores de un numero, sea negativo o positivo
      *
-     * @param num Número inicial
+     * @param numero Número inicial
      * @return Número de divisores
      */
-    public static int cuentaDivisores(int num) {
-
-        int contador = 0;
-        if (num >= 0) {
-            for (int i = 2; i < num; i++) {
-                if (num % i == 0) {
-                    contador++;
-                }
-            }
-        } else {
-            for (int i = -2; i > num; i--) {
-                if (num % i == 0) {
-                    contador++;
-                }
+    public static int cuentaDivisores(int numero) {
+        int contador = 0; // Recorremos de 1 al número (incluido el propio numero) 
+        for (int i = 1; i <= Math.abs(numero); i++) {
+            // si es divisible entre el número original, sumamos el contador 
+            if (numero % i == 0) {
+                contador++;
             }
         }
-
         return contador;
     }
 

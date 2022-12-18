@@ -1,6 +1,5 @@
 package es.discoduroderoer.numeros;
 
-import es.discoduroderoer.arrays.Array;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -262,24 +261,34 @@ public class Numeros {
     /**
      * Devuelve los digitos de un numero en un array
      *
-     * @param numeroInicial Numero al que extraer los digitos
+     * @param numero Numero al que extraer los digitos
      * @return Array con cada uno de los digitos
      */
-    public static int[] devuelveDigitos(int numeroInicial) {
+    public static int[] devuelveDigitos(int numero) {
 
-        int numero = numeroInicial;
-
-        int digitos[] = new int[cuentaCifras(numeroInicial)];
-        int numero_solo;
-
-        for (int i = 0; numeroInicial > 0; i++) {
-            numero /= 10;
-            numero_solo = numeroInicial - (numero * 10);
-            digitos[i] = numero_solo;
-            numeroInicial = numero;
+        // Si el numero es 0
+        // Creamos un array de una posicion
+        if (numero == 0) {
+            int digitos[] = {0};
+            return digitos;
         }
-        return Array.invertirArray(digitos);
 
+        // Creamos un array con tantas posiciones como cifras tiene el numero
+        int digitos[] = new int[cuentaCifras(numero)];
+        int digito;
+        // Pasamos el numero a positivo
+        int numeroOriginal = Math.abs(numero);
+        for (int i = 0, j = digitos.length - 1, copiaNumero = numeroOriginal; numeroOriginal > 0; i++, j--) {
+            // Divimos la copia entre 10
+            copiaNumero /= 10;
+            // Obtenemos el digito, numero original menos la copia multiplicada por 10
+            digito = numeroOriginal - (copiaNumero * 10);
+            // guardamos el digito en el array
+            digitos[j] = digito;
+            // Actualizamos el numero original
+            numeroOriginal = copiaNumero;
+        }
+        return digitos;
     }
 
     /**

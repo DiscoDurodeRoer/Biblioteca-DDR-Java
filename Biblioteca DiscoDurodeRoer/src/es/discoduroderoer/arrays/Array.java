@@ -4,6 +4,7 @@
  */
 package es.discoduroderoer.arrays;
 
+import es.discoduroderoer.numeros.Numeros;
 import java.util.Arrays;
 
 /**
@@ -12,27 +13,23 @@ import java.util.Arrays;
 public class Array {
 
     /**
-     * Indica si los números de un array son capicua, es decir, que es el mismo
-     * número si se lee por el principio y por el final
+     * Indica si un número es capicua, es decir, que es el mismo
+     * número si se lee igual por el principio y por el final
      *
-     * @param lista Array con numeros
+     * @param numero
      * @return True si es capicua, false si no lo es
      */
-    public static boolean EsCapicua(int lista[]) {
-
-        //creamos otro array
-        int listaprueba[];
-        listaprueba = new int[lista.length];
-
-        //asignamos los valores al nuevo array
-        //lo hacemos añadiendo los ultimos valores del primer array, al principio del nuevo array
-        for (int i = 0, j = 1; j <= lista.length; i++, j++) {
-            listaprueba[i] = lista[lista.length - j];
-        }
-
-        return Arrays.equals(lista, listaprueba);
-
+    public static boolean esCapicua(int numero){
+        
+        // Genero un array
+        int original[] = Numeros.devuelveDigitos(numero);
+        // Invertimos el array
+        int invertido[] = invertirArray(original);
+        
+        // Si el array son iguales, es capicua
+        return Arrays.equals(original, invertido);
     }
+
 
     /**
      * Redimensiona un array de números dando una nueva logitud, los datos
