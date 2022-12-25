@@ -13,23 +13,22 @@ import java.util.Arrays;
 public class Array {
 
     /**
-     * Indica si un número es capicua, es decir, que es el mismo
-     * número si se lee igual por el principio y por el final
+     * Indica si un número es capicua, es decir, que es el mismo número si se
+     * lee igual por el principio y por el final
      *
      * @param numero
      * @return True si es capicua, false si no lo es
      */
-    public static boolean esCapicua(int numero){
-        
+    public static boolean esCapicua(int numero) {
+
         // Genero un array
         int original[] = Numeros.devuelveDigitos(numero);
         // Invertimos el array
         int invertido[] = invertirArray(original);
-        
+
         // Si el array son iguales, es capicua
         return Arrays.equals(original, invertido);
     }
-
 
     /**
      * Redimensiona un array de números dando una nueva logitud, los datos
@@ -187,6 +186,50 @@ public class Array {
                 }
             }
 
+        }
+
+        // No hay un elemento repetido
+        return false;
+
+    }
+
+    /**
+     * Indica si un elemento dentro de un array esta repetido
+     *
+     * @param array array a comprobar
+     * @param num numero a comprobar
+     * @return si hay o no algun elemento repetido
+     */
+    public static boolean elementoRepetido(int[] array, int num) {
+
+        // Recorremos el mismo array
+        for (int i = 0; i < array.length; i++) {
+            // Si coincide significa que hay un elemento repetido
+            if (array[i] == num) {
+                return true;
+            }
+        }
+
+        // No hay un elemento repetido
+        return false;
+
+    }
+
+    /**
+     * Indica si un elemento dentro de un array esta repetido
+     *
+     * @param array array a comprobar
+     * @param cadena cadena a comprobar
+     * @return si hay o no algun elemento repetido
+     */
+    public static boolean elementoRepetido(String[] array, String cadena) {
+
+        // Recorremos el mismo array
+        for (int i = 0; i < array.length; i++) {
+            // Si coincide significa que hay un elemento repetido
+            if (array[i].equalsIgnoreCase(cadena)) {
+                return true;
+            }
         }
 
         // No hay un elemento repetido

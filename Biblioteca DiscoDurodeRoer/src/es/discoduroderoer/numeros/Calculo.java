@@ -257,8 +257,8 @@ public class Calculo {
     }
 
     /**
-     * Indica el mayor divisor de un numero, sin incluir el numero como tal. 
-     * Si es primo devuelve el propio numero, segun el signo puede ser -1 o 1
+     * Indica el mayor divisor de un numero, sin incluir el numero como tal. Si
+     * es primo devuelve el propio numero, segun el signo puede ser -1 o 1
      *
      * @param numero Número inicial
      * @return Número que es el mayor divisor del parámetro num
@@ -382,6 +382,34 @@ public class Calculo {
         }
 
         return contador;
+    }
+
+    /**
+     * Devuelve un array con todos los primos entre dos números
+     *
+     * @param minimo Número mínimo
+     * @param maximo Número máximo
+     * @return números primos entre el mínimo y el máximo
+     */
+    public static int[] primosEntre(int minimo, int maximo) {
+
+        if (maximo < minimo) {
+            int aux = minimo;
+            minimo = maximo;
+            maximo = aux;
+        }
+
+        int[] primos = new int[cuentaPrimosEntre(minimo, maximo)];
+
+        int indice = 0;
+        for (int i = minimo; i <= maximo; i++) {
+            if (esPrimo(i)) {
+                primos[indice] = i;
+                indice++;
+            }
+        }
+
+        return primos;
     }
 
 }
